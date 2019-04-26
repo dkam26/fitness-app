@@ -19,6 +19,11 @@ import { AuthService } from './auth/auth.service';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { TrainingService } from './training/training.service';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import { environment } from 'src/environments/environment.prod';
+
 
 
 @NgModule({
@@ -32,7 +37,7 @@ import { TrainingService } from './training/training.service';
     PastTrainingComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,11 @@ import { TrainingService } from './training/training.service';
     FlexLayoutModule,
     FormsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+
+
   ],
   providers: [AuthService,TrainingService],
   bootstrap: [AppComponent],
