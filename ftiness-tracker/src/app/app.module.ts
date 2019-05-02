@@ -24,6 +24,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { environment } from 'src/environments/environment.prod';
 import { FirestoreSettingsToken } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 
@@ -50,6 +51,7 @@ import { FirestoreSettingsToken } from '@angular/fire/firestore';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule
 
 
   ],
