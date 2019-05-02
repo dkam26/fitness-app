@@ -23,6 +23,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { environment } from 'src/environments/environment.prod';
+import { FirestoreSettingsToken } from '@angular/fire/firestore';
 
 
 
@@ -52,7 +53,7 @@ import { environment } from 'src/environments/environment.prod';
 
 
   ],
-  providers: [AuthService,TrainingService],
+  providers: [AuthService,TrainingService, { provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent],
   entryComponents:[StopTrainingComponent]
 })
